@@ -1,0 +1,334 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy-deep: #081235;
+    --navy: #0d1b4c;
+    --navy-2: #12246e;
+    --blue: #1e5fbf;
+    --blue-bright: #2a86d8;
+    --cyan: #22bccb;
+    --cyan-light: #46d6df;
+    --accent: #f4c414;
+    --grad-main: linear-gradient(120deg, #12246e 0%, #1e63bd 48%, #29c0cc 100%);
+    --grad-soft: linear-gradient(120deg, #1e63bd, #29c0cc);
+    --grad-text: linear-gradient(100deg, #12246e 0%, #1e63bd 45%, #22bccb 100%);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Montserrat', 'Outfit', sans-serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* DTecBiz Signature Gradient Text */
+.grad-text {
+  background: linear-gradient(100deg, #12246e 0%, #1e63bd 45%, #22bccb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.grad-text-cyan {
+  background: linear-gradient(120deg, #ffffff 0%, #46d6df 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Rotating Gear Animation for ACCEL 7.0 Logo */
+@keyframes spin-gear-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-gear-spin {
+  animation: spin-gear-slow 14s linear infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.group:hover .animate-gear-spin,
+.animate-gear-spin:hover {
+  animation-duration: 4s;
+}
+
+/* Logo Faded Glowing Shadow & Aura with White Contour Definition */
+.logo-glow-hero {
+  filter: 
+    drop-shadow(0 4px 16px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 8px 26px rgba(34, 188, 203, 0.32))
+    drop-shadow(0 14px 42px rgba(16, 185, 129, 0.26));
+  transition: filter 0.4s ease;
+}
+
+.logo-glow-hero:hover {
+  filter: 
+    drop-shadow(0 6px 20px rgba(0, 0, 0, 0.65))
+    drop-shadow(0 10px 34px rgba(34, 188, 203, 0.45))
+    drop-shadow(0 18px 48px rgba(16, 185, 129, 0.38));
+}
+
+.logo-gear-glow {
+  filter: 
+    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 10px rgba(34, 188, 203, 0.45));
+}
+
+
+
+
+.grad-text-gold {
+  background: linear-gradient(120deg, #fce83a 0%, #f4c414 50%, #eab308 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============================================================
+   DTecBiz Premium Buttons with Light Sweep Shimmer Effect
+   ============================================================ */
+.btn-dtb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 30px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  font-family: 'Space Grotesk', 'Montserrat', sans-serif;
+  text-decoration: none;
+}
+
+.btn-dtb::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-dtb:hover::after {
+  left: 130%;
+}
+
+.btn-dtb:hover {
+  transform: translateY(-3px);
+}
+
+.btn-dtb:active {
+  transform: translateY(-1px);
+}
+
+/* Cyan/Electric Blue (DTecBiz Primary) */
+.btn-dtb-cyan {
+  background: linear-gradient(120deg, #1e63bd 0%, #29c0cc 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 26px rgba(34, 188, 203, 0.38);
+}
+.btn-dtb-cyan:hover {
+  box-shadow: 0 18px 45px rgba(34, 188, 203, 0.55);
+  color: #ffffff;
+}
+
+/* Gold/Yellow Theme Accent */
+.btn-dtb-gold {
+  background: linear-gradient(120deg, #f4c414 0%, #f59e0b 50%, #eab308 100%);
+  color: #081235;
+  font-weight: 800;
+  box-shadow: 0 10px 26px rgba(244, 196, 20, 0.38);
+}
+.btn-dtb-gold:hover {
+  box-shadow: 0 18px 45px rgba(244, 196, 20, 0.55);
+  color: #081235;
+}
+
+/* Deep Tech Navy */
+.btn-dtb-navy {
+  background: linear-gradient(135deg, #0d1b4c 0%, #12246e 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(18, 36, 110, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.btn-dtb-navy:hover {
+  background: linear-gradient(135deg, #12246e 0%, #1e5fbf 100%);
+  box-shadow: 0 14px 34px rgba(18, 36, 110, 0.45);
+  color: #ffffff;
+}
+
+/* Emerald Tech Green */
+.btn-dtb-green {
+  background: linear-gradient(120deg, #16a34a 0%, #10b981 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+}
+.btn-dtb-green:hover {
+  box-shadow: 0 14px 34px rgba(16, 185, 129, 0.5);
+  color: #ffffff;
+}
+
+/* Outline on Light */
+.btn-dtb-outline {
+  background: #ffffff;
+  border: 2px solid #1e63bd;
+  color: #12246e;
+  box-shadow: 0 4px 14px rgba(30, 99, 189, 0.12);
+}
+.btn-dtb-outline:hover {
+  background: #12246e;
+  border-color: #12246e;
+  color: #ffffff;
+  box-shadow: 0 10px 26px rgba(18, 36, 110, 0.25);
+}
+
+/* Outline on Dark */
+.btn-dtb-outline-white {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  color: #ffffff;
+}
+.btn-dtb-outline-white:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #081235;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Small Button Variant */
+.btn-dtb-sm {
+  padding: 8px 20px;
+  font-size: 0.78rem;
+  border-radius: 30px;
+}
+
+/* ============================================================
+   DTecBiz Eyebrow Badges & Cards
+   ============================================================ */
+.dtb-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Grotesk', 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0f7c88;
+  padding: 6px 16px;
+  border: 1px solid rgba(34, 188, 203, 0.35);
+  border-radius: 30px;
+  background: rgba(34, 188, 203, 0.08);
+}
+
+.dtb-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #dde6f2;
+  border-radius: 22px;
+  box-shadow: 0 4px 16px rgba(18, 36, 110, 0.06);
+  transition: transform 0.25s, box-shadow 0.3s, border-color 0.3s;
+  overflow: hidden;
+}
+.dtb-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(120deg, #1e63bd, #29c0cc);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.dtb-card:hover {
+  box-shadow: 0 14px 40px rgba(18, 36, 110, 0.12);
+  transform: translateY(-5px);
+}
+.dtb-card:hover::before {
+  opacity: 1;
+}
+
+/* Light Theme Grid Patterns */
+.bg-light-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(14, 165, 233, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 165, 233, 0.07) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Pause animation on hover */
+.hover-pause:hover {
+  animation-play-state: paused;
+}
+
+@keyframes shine-sweep {
+  0% { left: -100%; }
+  20% { left: 150%; }
+  100% { left: 150%; }
+}
+.animate-shine-sweep {
+  animation: shine-sweep 6s ease-in-out infinite;
+}
+
+
+
+.logo-white-border {
+  filter: 
+    drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.9))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+}
+
+.logo-white-border-hero {
+  filter: 
+    drop-shadow(0 0 3px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.9))
+    drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
