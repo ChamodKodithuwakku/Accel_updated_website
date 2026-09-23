@@ -29,34 +29,24 @@ export default function Hero({ onOpenVideo }) {
           
           {/* Co-Branding Header Pill */}
           <ScrollReveal animation="fade-down" delay={50}>
-            <div className="inline-flex items-center justify-center gap-1.5 sm:gap-3 py-1 px-2.5 sm:py-2.5 sm:px-6 bg-white/10 backdrop-blur-md rounded-full border border-white/25 mb-6 sm:mb-8 shadow-xl max-w-full">
-              
+            <div className="inline-flex items-center justify-center gap-3 sm:gap-5 py-1.5 px-4 sm:py-2.5 sm:px-7 bg-white rounded-full border border-white mb-6 sm:mb-8 shadow-xl max-w-full">
+
               {/* Left: SLIIT KANDY UNI Logo */}
-              <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
-                <div className="bg-white px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-full shadow-xs shrink-0 flex items-center">
-                  <img 
-                    src="/sliit-kandy-logo.png" 
-                    alt="SLIIT KANDY UNI" 
-                    className="h-5 sm:h-8 object-contain"
-                  />
-                </div>
-                <div className="text-left leading-tight">
-                  <span className="text-[8px] sm:text-[10px] text-cyan-200 font-bold uppercase tracking-wider font-['Space_Grotesk'] block leading-none">
-                    Hosted by
-                  </span>
-                  <span className="text-[9px] sm:text-xs font-black text-white font-['Space_Grotesk'] whitespace-nowrap">
-                    SLIIT Kandy UNI <span className="text-cyan-200/90 font-medium text-[8px] sm:text-[11px]">• Pallekele</span>
-                  </span>
-                </div>
-              </div>
+              <img
+                src="/sliit-kandy-uni.png"
+                alt="SLIIT Kandy UNI"
+                className="h-7 sm:h-11 object-contain shrink-0"
+              />
 
               {/* Center Divider */}
-              <div className="h-4 sm:h-6 w-[1px] bg-white/25 mx-0.5 sm:mx-1.5 shrink-0"></div>
+              <div className="h-7 sm:h-10 w-px bg-slate-300 shrink-0"></div>
 
-              {/* Right: Accel Mini Logo */}
-              <div className="flex items-center shrink-0">
-                <AccelLogo size="small" showTagline={false} />
-              </div>
+              {/* Right: Accel Logo */}
+              <img
+                src="/accel-pill-logo.png"
+                alt="ACCEL"
+                className="h-7 sm:h-11 object-contain rounded-lg shrink-0"
+              />
 
             </div>
           </ScrollReveal>
