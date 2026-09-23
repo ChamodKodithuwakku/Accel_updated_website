@@ -39,7 +39,7 @@ export default function AboutSection() {
               </p>
               
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8 font-medium">
-                The Expo creates an interactive space to discover sustainability, ESG, circular economy, renewable energy, green technology, AI, automation, smart logistics, and entrepreneurship. With the keynote addresses by <strong>Prof. Janaka Ekanayake</strong> and <strong>Mr. Arjuna Bandara</strong> representing the academia and industry respectively, and in collaboration with the <strong>Green Building Council of Sri Lanka (GBCSL)</strong>, <span className="whitespace-nowrap font-bold text-slate-800">ACCEL 7.0</span> connects industry knowledge, academic expertise, and real-world innovation.
+                The Expo creates an interactive space to discover sustainability, ESG, circular economy, renewable energy, green technology, AI, automation, smart logistics, and entrepreneurship. With the keynote addresses by <strong>Prof. Janaka Ekanayake</strong> and <strong>Mr. Arjuna Bandara</strong> representing the academia and industry respectively, <span className="whitespace-nowrap font-bold text-slate-800">ACCEL 7.0</span> connects industry knowledge, academic expertise, and real-world innovation.
               </p>
             </ScrollReveal>
 
