@@ -45,7 +45,7 @@ export default function Hero({ onOpenVideo }) {
               <img
                 src="/accel-pill-logo.png"
                 alt="ACCEL"
-                className="h-7 sm:h-11 object-contain rounded-lg shrink-0"
+                className="h-7 sm:h-11 object-contain shrink-0"
               />
 
             </div>

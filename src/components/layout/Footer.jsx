@@ -32,7 +32,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <div className="bg-white rounded-xl px-2 py-1 shadow-sm">
                 <img 
-                  src="/sliit-kandy-logo.png" 
+                  src="/sliit-kandy-uni.png" 
                   alt="SLIIT KANDY UNI" 
                   className="h-8 object-contain"
                 />
@@ -40,7 +40,7 @@ export default function Footer() {
 
               <div className="bg-white rounded-xl px-2.5 py-1 shadow-sm">
                 <img 
-                  src="/accel-navbar-logo.png" 
+                  src="/accel-pill-logo.png" 
                   alt="ACCEL - Accelerating Business" 
                   className="h-8 object-contain"
                 />
