@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 // Layout Components
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
@@ -23,9 +23,31 @@ import VideoModal from './components/modals/VideoModal';
 
 // UI Helper Components
 import FloatingAdPill from './components/ui/FloatingAdPill';
+import SplashScreen from './components/ui/SplashScreen';
+
+const SPLASH_SEEN_KEY = 'accel-splash-seen';
+
+function shouldShowSplash() {
+  try {
+    return !sessionStorage.getItem(SPLASH_SEEN_KEY);
+  } catch {
+    return true; // Storage unavailable (private mode etc.) — show it anyway
+  }
+}
 
 export default function App() {
-  
+
+  // Launch splash screen (once per browser session)
+  const [showSplash, setShowSplash] = useState(shouldShowSplash);
+  const handleSplashDone = useCallback(() => {
+    try {
+      sessionStorage.setItem(SPLASH_SEEN_KEY, '1');
+    } catch {
+      // ignore
+    }
+    setShowSplash(false);
+  }, []);
+
   // Popup Ad State
   const [isPopupAdOpen, setIsPopupAdOpen] = useState(false);
 
@@ -35,13 +57,14 @@ export default function App() {
 
   // Check for stored ticket in localStorage on load
   useEffect(() => {
-    // Trigger Popup Ad automatically after 2.5 seconds on page load
+    // Trigger Popup Ad automatically 2.5 seconds after the page (and splash) is visible
+    if (showSplash) return;
     const timer = setTimeout(() => {
       setIsPopupAdOpen(true);
     }, 2500);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [showSplash]);
 
   // Trigger popup ad randomly while scrolling the page
   useEffect(() => {
@@ -89,6 +112,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-900 flex flex-col selection:bg-[#0052cc] selection:text-white font-sans relative overflow-x-hidden">
       
+      {/* Launch Splash Screen */}
+      {showSplash && <SplashScreen onDone={handleSplashDone} />}
+
       {/* Scroll Progress Bar at very top */}
       <ScrollProgress />
 
